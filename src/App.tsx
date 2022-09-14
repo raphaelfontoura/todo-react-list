@@ -1,4 +1,5 @@
 import styles from "./App.module.css";
+import { TaskList } from "./components/TaskList";
 import { Header } from "./components/Header";
 import { NewTask } from "./components/NewTask";
 
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <div className={styles.container}>
         <NewTask />
+        <TaskList />
       </div>
     </div>
   )
