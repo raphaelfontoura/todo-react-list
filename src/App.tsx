@@ -1,18 +1,14 @@
 import styles from "./App.module.css";
-import todoLogo from "./assets/img/rocket.svg";
+import { Header } from "./components/Header";
+import { NewTask } from "./components/NewTask";
 
 function App() {
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <img src={todoLogo} alt="rocket todo logotipo" />
-        <span>to</span>
-        <span>do</span>
-      </div>
-      <div>
-        <input type="text" />
-        <button>Criar</button>
+    <div>
+      <Header />
+      <div className={styles.container}>
+        <NewTask />
       </div>
     </div>
   )

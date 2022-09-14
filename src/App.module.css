@@ -1,26 +1,5 @@
 
-.header {
-  background: var(--gray-700);
-  height: 200px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header span {
-  font-size: 40px;
-  line-height: 48px;
-  font-weight: 900;
-}
-
-.header span {
-  color: var(--blue);
-}
-
-.header span:last-child {
-  color: var(--purple);
-}
-
-.header img {
-  margin-right: 0.75rem;
+.container {
+  width: 736px;
+  margin: 0 auto;
 }
