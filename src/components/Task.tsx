@@ -1,6 +1,7 @@
 import { Circle, Trash } from 'phosphor-react';
-import styles from "./Task.module.css";
-import React from 'react'
+import React from 'react';
+
+import styles from './Task.module.css';
 
 export function Task() {
   return (
