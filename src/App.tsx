@@ -13,14 +13,33 @@ interface Task {
 function App() {
 
   const [tasks, setTasks] = useState<Task[]>([]);
+  const [id, setId] = useState(1);
 
   function handleAddTask(newTask: String) {
     const newTasks = [...tasks, {
-      id: Math.random(),
+      id: id,
       task: newTask,
       isCompleted: false,
     }];
     setTasks(newTasks);
+    setId(id + 1);
+  }
+
+  function handleTaskDone(id: number) {
+    const newTasks = tasks.map(task => task.id === id ? {
+      ...task,
+      isCompleted: !task.isCompleted,
+    } : task);
+    setTasks(newTasks);
+  }
+
+  function handleDeleteTask(id: number) { 
+    const newTasks = tasks.filter(task => task.id !== id);
+    setTasks(newTasks);
+  }
+
+  function countCompletedTasks() {
+    return tasks.filter(task => task.isCompleted).length;
   }
 
   return (
@@ -30,13 +49,33 @@ function App() {
         <NewTask addTask={handleAddTask} />
         <div className={styles.taskContainer}>
           <div className={styles.taskCounters}>
-            <p>Tarefas Criadas <span>{tasks.length}</span> </p>
-            <p>Concluídas <span>0</span> </p>
+            <div>
+              <p> Tarefas Criadas </p> 
+              <span className={styles.pillCount}>{tasks.length}</span>
+            </div>
+            <div>
+              <p> Concluídas </p>
+              {tasks.length > 0 && 
+                (  
+                  <span className={styles.pillCount}>
+                    {countCompletedTasks()} de {tasks.length}
+                  </span>
+                )
+              }
+            </div>
+            
           </div>
-          {tasks.map(({id, task}) =>
+          {tasks.map(({id, task, isCompleted}) =>
           (
             <div className={styles.task}>
-              <Task key={id} task={task} />
+              <Task 
+                key={id} 
+                id={id}
+                task={task} 
+                done = {isCompleted}
+                checkDone={handleTaskDone} 
+                deleteTask={handleDeleteTask}
+              />
             </div>
           )
           )}

@@ -10,9 +10,45 @@
 }
 
 .taskContainer p {
-  color: var(--gray-100);
   font-size: 0.875rem;
   line-height: 1.25rem;
   font-weight: 400;
   margin: 0 12px;
+}
+
+.textTask {
+  color: var(--gray-100);
+}
+
+.textTaskDone {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
+
+.checked {
+  cursor: pointer;
+  color: var(--purple-dark);
+}
+
+.checked:hover {
+  color: var(--purple);
+}
+
+.unchecked {
+  cursor: pointer;
+  color: var(--gray-300);
+}
+
+.unchecked:hover {
+  color: var(--blue-dark);
+}
+
+.trash {
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.trash:hover {
+  color: var(--danger);
+  background: var(--gray-400);
 }

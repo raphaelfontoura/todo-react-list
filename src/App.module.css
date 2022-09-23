@@ -22,14 +22,32 @@
   margin-bottom: 24px;
 }
 
-.taskCounters p:first-child {
+.taskCounters div {
+  display: flex;
+}
+
+.taskCounters div p {
+  margin-right: 0.5rem;
+}
+
+.taskCounters div:first-child {
   color: var(--blue);
 }
 
-.taskCounters p:last-child {
+.taskCounters div:last-child {
   color: var(--purple);
 }
 
 .task {
   margin-bottom: 1rem;
+}
+
+.pillCount {
+  padding: 1px 8px;
+  border-radius: 1rem;
+  background: var(--gray-400);
+  color: var(--gray-200);
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin: 2px;
 }
