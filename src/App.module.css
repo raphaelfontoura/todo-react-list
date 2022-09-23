@@ -3,3 +3,33 @@
   width: 736px;
   margin: 0 auto;
 }
+
+.taskContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.taskCounters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 64px;
+  margin-bottom: 24px;
+}
+
+.taskCounters p:first-child {
+  color: var(--blue);
+}
+
+.taskCounters p:last-child {
+  color: var(--purple);
+}
+
+.task {
+  margin-bottom: 1rem;
+}

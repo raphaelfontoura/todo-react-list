@@ -3,12 +3,16 @@ import React from 'react';
 
 import styles from './Task.module.css';
 
-export function Task() {
+interface TaskProps {
+  task: String;
+}
+
+export function Task({ task } : TaskProps) {
   return (
     <div className={styles.taskContainer}>
       <Circle size={24} />
       <div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia optio porro nisi ullam voluptate voluptates. </p>
+        <p>{task}</p>
       </div>
       <Trash size={24} />
     </div>
